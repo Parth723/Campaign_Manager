@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<div class="container py-4">
+    <h2>Confirm Sending Campaign Emails</h2>
+    <p>Are you sure you want to send the campaign emails to all subscribers?</p>
+    <form method="post" action="{% url 'send_campaign_email' %}">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-primary">Send</button>
+    </form>
+</div>
+{% endblock body %}
