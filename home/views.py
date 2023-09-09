@@ -26,7 +26,7 @@ def subscribe(request):
     return render(request, "subscribe.html")
 
 def send_campaign_email(request):
-    # Get active subscribers
+    
     active_subscribers = Subscriber.objects.filter(is_active=True)
 
     campaign_subject = 'Save the Soil'
@@ -35,16 +35,14 @@ def send_campaign_email(request):
 
     for subscriber in active_subscribers:
             subject = campaign.subject
-            from_email = "jarvis7723@gmail.com"  # Replace with your email address
+            from_email = "jarvis7723@gmail.com" 
             to_email = subscriber.email
 
             email_content = render_to_string('email_base.html', {'campaign': campaign})
 
-            # Create an EmailMessage
             email_message = mail.EmailMessage(
                 subject, email_content, from_email, [to_email])
 
-            # Send the email
             email_message.content_subtype = "html"
             email_message.send()
 
