@@ -1,4 +1,4 @@
-Project Name is a Django web application for Campaign manager which sends out blog posts to the subsribers for the campaign: Save the Soil initiative.
+Project is a Django web application for "Campaign Manager" which sends out blog posts to the subsribers for the campaign: Save the Soil initiative.
 
 Table of Contents: 
 Prerequisites
